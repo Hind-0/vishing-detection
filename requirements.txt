@@ -1,5 +1,7 @@
 pandas
+shap
 scikit-learn
 matplotlib
 dataframe-image
 tensorflow
+
