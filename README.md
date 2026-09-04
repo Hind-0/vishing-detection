@@ -1,21 +1,74 @@
 📞 Vishing Detection Using Machine Learning
 
-A machine learning project that analyses text data to classify content as Vishing or Non-Vishing, using TF-IDF feature extraction, Logistic Regression, and a Multi-Layer Perceptron (MLP) neural network.
-
+A machine learning research project investigating the detection of potential vishing scams and whether understandable explanations can be provided alongside detection results.
 
 📌 Project Overview
 
-This project investigates the use of machine learning for vishing detection.
+Vishing, or voice phishing, is a form of social engineering where attackers attempt to obtain sensitive information by impersonating legitimate individuals or organisations.
 
-The text data is transformed into numerical features using TF-IDF (Term Frequency-Inverse Document Frequency). Two classification approaches are then trained and evaluated:
+This project investigates whether machine learning can be used to identify potential vishing scams from textual data.
 
+The project also explores a potential research gap: instead of simply informing a user that a call is suspicious, could a system provide understandable reasons for why the call was flagged?
+
+Potential characteristics include:
+
+Suspicious language
+Urgency or pressure
+Requests for sensitive information
+Impersonation
+Other social-engineering indicators
+🔬 Research Question
+
+Can machine learning detect potential vishing scams while also providing understandable explanations of the characteristics that contributed to the classification?
+
+Hypothesis
+
+Machine learning can be used to detect potential vishing scams while identifying characteristics that contribute to the classification and presenting these characteristics in an understandable way.
+
+🤖 Models Used
 Logistic Regression
-Multi-Layer Perceptron (MLP) neural network
 
-The models are evaluated using accuracy, classification reports, and confusion matrices.
+A Logistic Regression classifier is trained using TF-IDF text features.
 
-The project also includes a basic explainability analysis for the Logistic Regression model to identify words that have the strongest association with Vishing and Non-Vishing classifications.
+Model coefficients are analysed to investigate which words or features are associated with different classifications.
 
+Multi-Layer Perceptron (MLP)
+
+A neural network is used as a second classification approach.
+
+TF-IDF Features
+       ↓
+Dense Layer — 50 neurons
+       ↓
+Dense Layer — 20 neurons
+       ↓
+Sigmoid Output
+🔤 Text Processing
+
+The project uses TF-IDF (Term Frequency-Inverse Document Frequency) to convert textual data into numerical features that can be used by the machine learning models.
+
+📊 Evaluation
+
+The models are evaluated using:
+
+Accuracy
+Precision
+Recall
+F1-score
+Confusion matrices
+
+The project also investigates model explainability through analysis of influential features.
+
+🔎 Research Areas
+
+The research investigates:
+
+What datasets are available for vishing detection?
+What machine learning methods have been used previously?
+What limitations exist in current vishing detection systems?
+How are detection results presented to users?
+Have existing systems incorporated explainability?
+Could understandable explanations make detection results more useful to users?
 🗂️ Repository Structure
 vishing-detection/
 │
@@ -31,163 +84,23 @@ vishing-detection/
 ├── requirements.txt
 └── README.md
 
-Note: The training and testing CSV files are not stored in this repository because the dataset exceeds GitHub's file-size limit. The datasets are required locally to run the project.
-
-🤖 Machine Learning Models
-1. Logistic Regression
-
-A Logistic Regression classifier is trained using the TF-IDF features.
-
-The model is used to:
-
-Classify text as Vishing or Non-Vishing
-Measure classification accuracy
-Generate a classification report
-Produce a confusion matrix
-Identify influential words through model coefficients
-2. Multi-Layer Perceptron (MLP)
-
-A neural network is also used for binary classification.
-
-The architecture consists of:
-
-Input Layer
-     ↓
-Dense Layer — 50 neurons — ReLU
-     ↓
-Dense Layer — 20 neurons — ReLU
-     ↓
-Output Layer — 1 neuron — Sigmoid
-
-The model is trained using:
-
-Binary Cross-Entropy loss
-Adam optimiser
-50 training epochs
-Accuracy as an evaluation metric
-🔤 Text Feature Extraction
-
-The text data is converted into numerical features using TF-IDF.
-
-vectorizer = TfidfVectorizer()
-
-X_train = vectorizer.fit_transform(X_train)
-X_test = vectorizer.transform(X_test)
-
-The vectorizer learns the vocabulary from the training data and transforms the text into numerical feature vectors.
-
-🔍 Model Explainability
-
-The Logistic Regression model's coefficients are examined to identify words that have the strongest influence on the classification.
-
-The project identifies:
-
-Words most associated with Vishing
-
-The words with the largest positive coefficients are extracted.
-
-Words most associated with Non-Vishing
-
-The words with the largest negative coefficients are extracted.
-
-This provides an interpretable view of which terms the model considers important when making predictions.
-
-📊 Model Evaluation
-
-The models are evaluated using:
-
-Accuracy
-Precision
-Recall
-F1-score
-Confusion Matrix
-
-Example evaluation:
-
-print("Accuracy:", accuracy_score(y_test, pred_A))
-print(classification_report(y_test, pred_A))
-📈 Visualisations
-Confusion Matrix
-
-The confusion matrix shows the number of:
-
-Correct Non-Vishing predictions
-Correct Vishing predictions
-Incorrect classifications
-MLP Training History
-
-The training history is plotted to compare model performance during training and validation.
-
-Predicted vs Actual Results
-
-The MLP predictions are compared with the actual test labels to investigate how closely the model's classifications match the test data.
+The datasets are not included in this repository because they exceed GitHub's file-size limit.
 
 🛠️ Technologies
-Python — programming language
-Pandas — data loading and manipulation
-Scikit-learn — TF-IDF, Logistic Regression and evaluation
-TensorFlow / Keras — MLP neural network
-Matplotlib — data visualisation
-Dataframe Image — exporting DataFrames as images
-🚀 How to Run
-1. Clone the repository
-git clone YOUR_GITHUB_REPOSITORY_URL
-cd vishing-detection
-2. Install dependencies
-pip install -r requirements.txt
-3. Add the datasets
-
-Place the required datasets on your local machine:
-
-composite_train.csv
-composite_test.csv
-
-If your Python code expects the files in the current directory, place them in the same directory as the Python script.
-
-4. Run the project
-python vishing_detection.py
-📁 Dataset
-
-The project uses two datasets:
-
-composite_train.csv — training data
-composite_test.csv — testing data
-
-The datasets are not included in this repository because the files exceed GitHub's recommended file-size limit.
-
-💡 Future Improvements
-
-Potential improvements to the project include:
-
-Hyperparameter tuning for both models
-Comparing additional classification algorithms
-Improving the MLP architecture
-Using cross-validation
-Investigating class imbalance
-Improving model explainability
-Testing additional NLP techniques
-Improving the visualisation of predicted versus actual classifications
+Python
+Pandas
+Scikit-learn
+TensorFlow / Keras
+Matplotlib
+Dataframe Image
+🚀 Future Work
+Investigate additional vishing datasets
+Compare additional machine learning models
+Improve NLP preprocessing
+Investigate explainable AI techniques
+Explore how explanations could be presented to users
+Compare the project with existing vishing detection research
 
 👩‍💻 Author
-
 Hind Michaal
-
-Computer Science Student | Aspiring Software engineer / Machine Learning Practitioner/Interested in Cyber Security
-
-⭐ Project Summary
-
-This project demonstrates an end-to-end machine learning workflow for text classification:
-
-Raw Text
-   ↓
-Data Cleaning
-   ↓
-TF-IDF Vectorisation
-   ↓
-Machine Learning Models
-   ↓
-Predictions
-   ↓
-Evaluation
-   ↓
-Visualisation & Explainability
+Computer Science Student/Machine Learning/Interested in Cyber Security
