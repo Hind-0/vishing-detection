@@ -17,6 +17,7 @@ Urgency or pressure
 Requests for sensitive information
 Impersonation
 Other social-engineering indicators
+
 🔬 Research Question
 
 Can machine learning detect potential vishing scams while also providing understandable explanations of the characteristics that contributed to the classification?
@@ -26,6 +27,7 @@ Hypothesis
 Machine learning can be used to detect potential vishing scams while identifying characteristics that contribute to the classification and presenting these characteristics in an understandable way.
 
 🤖 Models Used
+
 Logistic Regression
 
 A Logistic Regression classifier is trained using TF-IDF text features.
@@ -43,6 +45,7 @@ Dense Layer — 50 neurons
 Dense Layer — 20 neurons
        ↓
 Sigmoid Output
+
 🔤 Text Processing
 
 The project uses TF-IDF (Term Frequency-Inverse Document Frequency) to convert textual data into numerical features that can be used by the machine learning models.
@@ -69,7 +72,9 @@ What limitations exist in current vishing detection systems?
 How are detection results presented to users?
 Have existing systems incorporated explainability?
 Could understandable explanations make detection results more useful to users?
+
 🗂️ Repository Structure
+
 vishing-detection/
 │
 ├── data/
@@ -87,12 +92,14 @@ vishing-detection/
 The datasets are not included in this repository because they exceed GitHub's file-size limit.
 
 🛠️ Technologies
+
 Python
 Pandas
 Scikit-learn
 TensorFlow / Keras
 Matplotlib
 Dataframe Image
+
 🚀 Future Work
 Investigate additional vishing datasets
 Compare additional machine learning models
