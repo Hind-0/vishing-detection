@@ -54,11 +54,11 @@ The project uses TF-IDF (Term Frequency-Inverse Document Frequency) to convert t
 
 The models are evaluated using:
 
-Accuracy
-Precision
-Recall
-F1-score
-Confusion matrices
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Confusion matrices
 
 The project also investigates model explainability through analysis of influential features.
 
@@ -66,47 +66,57 @@ The project also investigates model explainability through analysis of influenti
 
 The research investigates:
 
-What datasets are available for vishing detection?
-What machine learning methods have been used previously?
-What limitations exist in current vishing detection systems?
-How are detection results presented to users?
-Have existing systems incorporated explainability?
-Could understandable explanations make detection results more useful to users?
+- What datasets are available for vishing detection?
+- What machine learning methods have been used previously?
+- What limitations exist in current vishing detection systems?
+- How are detection results presented to users?
+- Have existing systems incorporated explainability?
+- Could understandable explanations make detection results more useful to users?
 
 🗂️ Repository Structure
-
 vishing-detection/
-│
+
+
 ├── data/
-│   └── README.md
+
+│                └── README.md
+
 │
+
 ├── results/
-│   ├── selected_rows.png
-│   ├── Logistic Regression-Confusion Matrix.png
-│   └── Model_A.png
+
+│                ├── selected_rows.png
+
+│                ├── Logistic Regression-Confusion Matrix.png
+
+│                └── Model_A.png
+
 │
+
 ├── vishing_detection.py
+
 ├── requirements.txt
+
 └── README.md
 
 The datasets are not included in this repository because they exceed GitHub's file-size limit.
 
 🛠️ Technologies
 
-Python
-Pandas
-Scikit-learn
-TensorFlow / Keras
-Matplotlib
-Dataframe Image
+- Python
+- Pandas
+- Scikit-learn
+- TensorFlow / Keras
+- Matplotlib
+- Dataframe Image
 
 🚀 Future Work
-Investigate additional vishing datasets
-Compare additional machine learning models
-Improve NLP preprocessing
-Investigate explainable AI techniques
-Explore how explanations could be presented to users
-Compare the project with existing vishing detection research
+- Investigate additional vishing datasets
+- Compare additional machine learning models
+- Improve NLP preprocessing
+- Investigate explainable AI techniques
+- Explore how explanations could be presented to users
+- Compare the project with existing vishing detection research
 
 👩‍💻 Author
 
